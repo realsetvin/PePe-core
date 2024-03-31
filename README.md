@@ -18,7 +18,7 @@ With enough support - PEPEPOW is set to become the second most popular proof-of-
 
 ## <br> Important links: <br>
  - Github [GITHUB](https://github.com/MattF42/PePe-core/)
- - Website [PEPEPOW](https://pepecore.wordpress.com/)
+ - Website [PEPEPOW](https://pepepow.org/)
  - Web Wallet [WALLET](https://wallet-pepepow.foztor.net/)
  - Faucet [FREE PEPEW](https://pepepow.foztor.net/faucet/#)
  - Dice Game [DICE](https://dice-pepepow.foztor.net/)
