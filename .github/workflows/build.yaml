@@ -1,7 +1,7 @@
 ---
     name: PEPEPOW Build
     on:
-      push:
+      push: 
         branches:
           - main
           - v2.4.7*
