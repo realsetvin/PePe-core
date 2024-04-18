@@ -4,16 +4,22 @@
       push:
         branches:
           - main
-          - v2.4.7.1*
-          - develop
+          - v2.4.7*
+          - dev
       pull_request:
         branches:
-          - develop
+          - dev
     env:
       COIN_NAME: PePe-core
       BUILD_DIR: build
       COMPRESS_DIR: compress
       TEST_LOG_ARTIFACT_DIR: test-logs
+    
+    permissions:
+        contents: read
+        checks: write
+        id-token: write
+      
     jobs:
       checking-build-version:
         name: Get Version
