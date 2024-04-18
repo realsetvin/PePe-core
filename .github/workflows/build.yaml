@@ -1,5 +1,5 @@
 ---
-    name: pepe-core Build
+    name: PePe-core Build
     on:
       push:
         branches:
@@ -10,9 +10,9 @@
         branches:
           - develop
     env:
-      COIN_NAME: pepe-core
-      BUILD_DIR: pepe-core-build
-      COMPRESS_DIR: pepe-core-compress
+      COIN_NAME: PePe-core
+      BUILD_DIR: PePe-core-build
+      COMPRESS_DIR: PePe-core-compress
       TEST_LOG_ARTIFACT_DIR: test-logs
     jobs:
       checking-build-version:
@@ -81,18 +81,18 @@
             run: |
               make -j8
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
               strip $BUILD_DIR/*
           - name: generate checksum and compress
             run: |
               echo "buildng $BUILD_VERSION version"
               cd $BUILD_DIR
-              shasum pepe-core-cli >> checksums.txt
-              openssl sha256 pepe-core-cli >> checksums.txt
-              shasum pepe-cored >> checksums.txt
-              openssl sha256 pepe-cored >> checksums.txt
-              shasum pepe-core-qt >> checksums.txt
-              openssl sha256 pepe-core-qt >> checksums.txt
+              shasum PePe-core-cli >> checksums.txt
+              openssl sha256 PePe-core-cli >> checksums.txt
+              shasum PePe-cored >> checksums.txt
+              openssl sha256 PePe-cored >> checksums.txt
+              shasum PePe-core-qt >> checksums.txt
+              openssl sha256 PePe-core-qt >> checksums.txt
               cat checksums.txt
               cd ..
               tar -cvzf ${COIN_NAME}-macos-${{ needs.get-version.outputs.version }}.tar.gz $BUILD_DIR/*
@@ -113,7 +113,7 @@
             uses: actions/upload-artifact@v4
             with:
               name: ${{ env.COIN_NAME }}-macos11-dmg-${{ env.BUILD_VERSION }}
-              path: pepe-core-Qt.dmg
+              path: PePe-core-Qt.dmg
               
       build-macos12:
         name: MacOS 12 build
@@ -141,18 +141,18 @@
             run: |
               make -j8
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
               strip $BUILD_DIR/*
           - name: generate checksum and compress
             run: |
               echo "buildng $BUILD_VERSION version"
               cd $BUILD_DIR
-              shasum pepe-core-cli >> checksums.txt
-              openssl sha256 pepe-core-cli >> checksums.txt
-              shasum pepe-cored >> checksums.txt
-              openssl sha256 pepe-cored >> checksums.txt
-              shasum pepe-core-qt >> checksums.txt
-              openssl sha256 pepe-core-qt >> checksums.txt
+              shasum PePe-core-cli >> checksums.txt
+              openssl sha256 PePe-core-cli >> checksums.txt
+              shasum PePe-cored >> checksums.txt
+              openssl sha256 PePe-cored >> checksums.txt
+              shasum PePe-core-qt >> checksums.txt
+              openssl sha256 PePe-core-qt >> checksums.txt
               cat checksums.txt
               cd ..
               tar -cvzf ${COIN_NAME}-macos-${{ needs.get-version.outputs.version }}.tar.gz $BUILD_DIR/*
@@ -173,7 +173,7 @@
             uses: actions/upload-artifact@v4
             with:
               name: ${{ env.COIN_NAME }}-macos12-dmg-${{ env.BUILD_VERSION }}
-              path: pepe-core-Qt.dmg
+              path: PePe-core-Qt.dmg
               
       build-ubuntu20:
         name: Ubuntu 20 build
@@ -202,7 +202,7 @@
             run: |
               make -j$(nproc)
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
               strip $BUILD_DIR/*
           - name: generate checksum and compress
             run: |
@@ -256,7 +256,7 @@
             run: |
               make -j$(nproc)
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
               strip $BUILD_DIR/*
           - name: generate checksum and compress
             run: |
@@ -313,7 +313,7 @@
             run: |
               make -j$(nproc)
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli.exe,pepe-cored.exe,qt/pepe-core-qt.exe} $BUILD_DIR/
+              mv src/{PePe-core-cli.exe,PePe-cored.exe,qt/PePe-core-qt.exe} $BUILD_DIR/
               strip $BUILD_DIR/*
           - name: generate checksum and compress
             run: |
@@ -367,7 +367,7 @@
             run: |
               make -j$(nproc)
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
           - name: generate checksum and compress binary
             run: |
               echo "buildng $BUILD_VERSION version"
@@ -422,7 +422,7 @@
             run: |
               make -j$(nproc)
               mkdir -p $BUILD_DIR
-              mv src/{pepe-core-cli,pepe-cored,qt/pepe-core-qt} $BUILD_DIR/
+              mv src/{PePe-core-cli,PePe-cored,qt/PePe-core-qt} $BUILD_DIR/
           - name: generate checksum and compress binary
             run: |
               echo "buildng $BUILD_VERSION version"
