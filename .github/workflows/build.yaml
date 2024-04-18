@@ -11,8 +11,8 @@
           - develop
     env:
       COIN_NAME: PePe-core
-      BUILD_DIR: PePe-core-build
-      COMPRESS_DIR: PePe-core-compress
+      BUILD_DIR: build
+      COMPRESS_DIR: compress
       TEST_LOG_ARTIFACT_DIR: test-logs
     jobs:
       checking-build-version:
